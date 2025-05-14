@@ -1,0 +1,6 @@
+.terraform*
+terraform.tfstate*
+*.tfvars
+example/
+backend.tf
+*.zip
