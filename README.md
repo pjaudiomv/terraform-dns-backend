@@ -39,3 +39,17 @@ tf_backend_password = "dumpsterfire"
 ## ⚙️ Using the Backend
 
 An example/main.tf file is automatically generated to demonstrate how to configure a Terraform project to use the Route 53-based backend via the deployed Lambda function.
+
+```hcl
+terraform {
+  backend "http" {
+    address = "https://lambda.function.url/default/my-project"
+    lock_address = "https://lambda.function.url/lock/default/my-project"
+    unlock_address = "https://lambda.function.url/unlock/default/my-project"
+    username = "your-username"
+    password = "your-password"
+    lock_method    = "POST"
+    unlock_method  = "POST"
+  }
+}
+```
